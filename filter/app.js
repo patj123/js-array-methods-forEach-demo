@@ -64,3 +64,60 @@ const shorties = myFilter(words, function(word) {
 const everyOtherWord = myFilter(words, function(word, i) {
 	return i % 2 === 0;
 });
+
+
+//my work
+
+function filterByValue(arr, str) {
+	return arr.filter(function(obj) {
+		if (obj[str] === true) {
+			return obj[str] 
+		};
+	});
+};
+
+function find(arr, num) {
+	arr = arr.filter(function(val) {
+		if (val % num === 0) {
+			return num;
+		}
+	});
+	//was getting '[]' if I did not speficifally if there was nothing divisible in it so I had to force it to be undefined
+	if (arr.length === 0) {
+		return undefined;
+	} else {
+		return arr;
+	};
+};
+
+function findInObj(arr, str) {
+	const result = arr.filter(function(obj) {
+		if (obj[str] === true) {
+			return obj;
+		};
+	});
+	return result[0]
+};
+
+function removeVowels(str) {
+	str = str.toLowerCase();
+	str = str.split('');
+	const vowels = "aeiou".split('');
+	return str.filter(function(char) {
+		if (!vowels.includes(char)) {
+			return char
+		}
+	}).join('');
+};
+
+function doubleOddNumbers(numbers) {
+	return numbers.filter(function(number) {
+		if (number % 2 !== 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}).map(function(number) {
+		return number * 2;
+	});
+};

@@ -60,3 +60,27 @@ const priorityMap = myMap(todos, function(todo) {
 const repeatedStrings = myMap([ 'a', 'b', 'c', 'd', 'e' ], function(str, idx) {
 	return str.repeat(idx);
 }); //["", "b", "cc", "ddd", "eeee"]
+
+//my work
+
+function doubleValuesWithMap(arr) {
+	return arr.map(number => number * 2);
+};
+
+function valTimesIndex (arr) {
+	return arr.map(function (val, index) {
+		return val * index;
+	});
+};
+
+function extractKey(arr, str) {
+	return arr.map(function(obj) {
+		return obj[str];
+	});
+};
+
+function extractFullName(arr) {
+	return arr.map(function(obj) {
+		return obj.first + " " + obj.last;
+	});
+};
